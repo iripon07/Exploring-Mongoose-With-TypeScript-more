@@ -2,58 +2,50 @@ import { Schema, model } from "mongoose";
 import { IUser } from "./user.interface";
 
 const userSchema = new Schema<IUser>({
-    id: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    role: {
-      type: String,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+  id: {
+    type: String,
+  },
+  role: {
+    type: String,
+  },
+  password: {
+    type: String,
+  },
 
-    name: {
-      firstName: {
-        type: String,
-        required: true,
-      },
-      middleName: {
-        type: String,
-      },
-      lastName: {
-        type: String,
-        required: true,
-      },
-    },
-    datOfBirth: {
+  name: {
+    firstName: {
       type: String,
     },
-    gender: {
-      type: String,
-      enum: ["male", "female"],
-    },
-    email: {
+    middleName: {
       type: String,
     },
-    contactNo: {
+    lastName: {
       type: String,
-      required: true,
     },
-    emergencyContactNo: {
-      type: String,
-      required: true,
-    },
-    presentAddress: {
-      tye: String,
-      required: true,
-    },
-    permanentAddress: {
-      type: String,
-      required: true,
-    },
-  });
-  const User = model<IUser>("User", userSchema);
+  },
+  datOfBirth: {
+    type: String,
+  },
+  gender: {
+    type: String,
+    enum: ["male", "female"],
+  },
+  email: {
+    type: String,
+  },
+  contactNo: {
+    type: String,
+  },
+  emergencyContactNo: {
+    type: String,
+  },
+  presentAddress: {
+    tye: String,
+  },
+  permanentAddress: {
+    type: String,
+  },
+});
+const User = model<IUser>("User", userSchema);
+
+export default User;
