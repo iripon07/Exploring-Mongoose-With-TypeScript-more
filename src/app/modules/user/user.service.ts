@@ -19,4 +19,7 @@ export const getUserByIdFromDB = async (
   return user;
 };
 
-export const 
+export const getAdminUsersFromDB = async (): Promise<IUser | null> => {
+  const admins = await User.getAdminUsers();
+  return admins;
+};
